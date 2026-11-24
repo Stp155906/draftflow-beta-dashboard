@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="DraftFlow private beta creator dashboard" />
+    <title>DraftFlow - Creator Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <a class="brand" href="#overview"><span class="brand-mark">D</span><span>DraftFlow</span></a>
+        <p class="beta-label">PRIVATE BETA</p>
+        <nav aria-label="Main navigation">
+          <a class="nav-link active" href="#overview"><span>◈</span> Overview</a>
+          <a class="nav-link" href="#workflow"><span>◇</span> My workflow</a>
+          <a class="nav-link" href="#history"><span>◌</span> Delivery history</a>
+          <a class="nav-link" href="#help"><span>?</span> Help center</a>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="limit-card"><span class="limit-icon">∞</span><div><strong>Beta access</strong><small>Up to 2 drafts daily</small></div></div>
+          <button class="profile" type="button"><span class="avatar">DF</span><span><strong>Creator account</strong><small>Private beta</small></span><span class="dots">•••</span></button>
+        </div>
+      </aside>
+
+      <main>
+        <header class="topbar">
+          <button class="menu-button" type="button" aria-label="Open menu">☰</button>
+          <div><p class="eyebrow">PRIVATE BETA PREVIEW</p><h1>Good morning, creator.</h1></div>
+          <div class="top-actions"><button class="icon-button" type="button" aria-label="Notifications">♧<i></i></button><button class="help-button" type="button">Need help?</button></div>
+        </header>
+
+        <section id="overview" class="hero-grid">
+          <article class="today-card">
+            <div class="card-head"><div><p class="eyebrow">TODAY'S DELIVERY</p><h2>Ready when your content is.</h2></div><span class="status wait"><span></span>Waiting</span></div>
+            <p class="intro">We will check your connected Drive folder at 9:00 AM AST. If everything is ready, your TikTok draft will be sent for you to finish in the app.</p>
+            <div class="progress-row"><div class="progress-track"><div class="progress-fill"></div></div><span>1 of 4 checks ready</span></div>
+            <div class="today-actions"><button class="primary" id="simulateCheck" type="button">Preview today's content</button><button class="text-button" type="button">Change schedule</button></div>
+          </article>
+          <article class="quiet-card"><p class="eyebrow">YOUR PROMISE</p><h3>You stay in control.</h3><p>DraftFlow never publishes publicly. It prepares the draft; you review, edit, add music, and post inside TikTok.</p><span class="mini-lock">⌁ Draft-first delivery</span></article>
+        </section>
+
+        <section class="section-heading"><div><p class="eyebrow">SETUP</p><h2>Your connection checklist</h2><p>Complete these once. We will keep an eye on the connections afterward.</p></div><span class="setup-count">1 of 4 complete</span></section>
+        <section class="connections" aria-label="Connection checklist">
+          <article class="connection done"><div class="connection-icon drive">G</div><div class="connection-body"><p>Google account</p><h3>Connected</h3><small>Your account can choose a Drive folder.</small></div><button type="button" class="plain-button">Manage</button></article>
+          <article class="connection"><div class="connection-icon folder">⌂</div><div class="connection-body"><p>Content folder</p><h3>Choose your folder</h3><small>We only read the folder you select.</small></div><button type="button" class="outline-button" data-modal="folder">Choose folder</button></article>
+          <article class="connection"><div class="connection-icon tiktok">♪</div><div class="connection-body"><p>TikTok account</p><h3>Connect TikTok</h3><small>Needed to send drafts to your phone.</small></div><button type="button" class="outline-button" data-modal="tiktok">Connect</button></article>
+          <article class="connection"><div class="connection-icon schedule">◷</div><div class="connection-body"><p>Daily schedule</p><h3>Choose a time</h3><small>Maximum two draft deliveries daily.</small></div><button type="button" class="outline-button" data-modal="schedule">Set schedule</button></article>
+        </section>
+
+        <section id="workflow" class="lower-grid">
+          <article class="workflow-card"><div class="card-head"><div><p class="eyebrow">HOW IT WORKS</p><h2>A calm daily routine</h2></div><a href="#help">See the guide</a></div><ol class="flow">
+            <li><span>01</span><div><strong>You add your finished images and CSV</strong><small>Save them in today's dated Drive folder.</small></div></li>
+            <li><span>02</span><div><strong>DraftFlow checks the folder</strong><small>Missing content? You get an email instead of a wrong post.</small></div></li>
+            <li><span>03</span><div><strong>TikTok receives your draft</strong><small>Open the TikTok notification and make it yours.</small></div></li>
+          </ol></article>
+          <article id="history" class="history-card"><div class="card-head"><div><p class="eyebrow">RECENT ACTIVITY</p><h2>Your delivery history</h2></div></div><div class="empty-history"><span>◎</span><strong>Your first delivery will appear here.</strong><p>Once connected, you will see every draft, skipped day, and helpful error in one place.</p></div></article>
+        </section>
+
+        <section id="help" class="support-strip"><div><span class="support-mark">?</span><div><strong>Nothing should fail silently.</strong><p>If your folder is missing an image or copy file, DraftFlow will email you instead of sending the wrong post.</p></div></div><button class="text-button" type="button">Open help center</button></section>
+      </main>
+    </div>
+
+    <dialog id="setupModal"><button class="close" type="button" aria-label="Close">×</button><p class="eyebrow">BETA PREVIEW</p><h2 id="modalTitle">Coming soon</h2><p id="modalText">This button will start the secure connection flow in the working beta.</p><button class="primary close-modal" type="button">Got it</button></dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
